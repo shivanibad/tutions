@@ -1,0 +1,64 @@
+<section id="footer" class="bg-opus m-0">
+    <div class="container text-white d-none d-md-block">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a (click)='onHome()'><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a (click)='onAbout()'><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a (click)='onDev()'><i class="fa fa-angle-double-right"></i>About Developers</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Explore</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a (click)='onBooks()'><i class="fa fa-angle-double-right"></i>Books</a></li>
+                    <li><a (click)='onExplore()'><i class="fa fa-angle-double-right"></i>Tuitions</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Be a Member</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a (click)='onLogin()'><i class="fa fa-angle-double-right"></i>Login</a></li>
+                    <li><a (click)='onRegister()'><i class="fa fa-angle-double-right"></i>Register as Student</a></li>
+                    <li><a (click)='onRegisterTeacher()'><i class="fa fa-angle-double-right"></i>Register as Teacher</a></li>
+                   
+                </ul>
+            </div>
+
+        </div>
+        <div class="row ">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                <ul class="list-unstyled list-inline social text-center">
+                    <li class="list-inline-item"><a href="https://www.facebook.com" target="blank"><i
+                                class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.instagram.com" target="blank"><i
+                                class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a routerLink="/contact-us"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+                <p class="h6">© All rights Reserved.<a class="text-green ml-2">Tution Dekho</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="container d-block d-md-none">
+        <div class="row text-center">
+            <div class="col">
+                <a routerLink="/home"><span class="material-icons text-white">
+                        home
+                    </span></a>
+            </div>
+            <div class="col">
+                <a routerLink="/books"><span class="material-icons text-white">
+                        local_library
+                    </span></a>
+            </div>
+            <div class="col">
+                <a routerLink="/studentDetails"><span class="material-icons text-white">
+                        account_circle
+                    </span></a>
+            </div>
+        </div>
+    </div>
+</section>

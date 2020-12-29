@@ -1,0 +1,14 @@
+<td scope="col"> {{student.userId}}</td>
+<td scope="col"> {{student.firstName + " " + student.lastName}}</td>
+<td scope="col"> {{student.userClass}}</td>
+<td scope="col"> {{student.email}}</td>
+<td>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <button class="button btn btn-sm btn-dark my-1" (click)="onAccept()">Accept</button>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <button class="button btn btn-sm btn-danger my-1" (click)="onReject()">Reject</button>
+        </div>
+    </div>
+</td>

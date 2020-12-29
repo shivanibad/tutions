@@ -1,0 +1,202 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <div class="profile_pic">
+                <img src="{{student.imagePath}}">
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-center flex-column">
+                <div class="name_container">
+                    <div class="name"> {{student.firstName|uppercase}}&nbsp;{{student.lastName|uppercase}}</div>
+                </div>
+                <div class="address"> {{student.city|uppercase}}&nbsp;{{student.state|uppercase}}</div>
+            </div>
+            <div class="container ">
+                <div class="row">
+                    <div class="col">
+                        <div class="profile-head">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                        aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                        aria-controls="profile" aria-selected="false">Subscriptions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                    </div> -->
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>{{student.firstName|uppercase}}&nbsp;{{student.lastName|uppercase}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Class</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>{{student.userClass}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Date Of Birth</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>{{student.dateOfBirth}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>{{student.email}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Phone</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>{{student.phoneNumber}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Address</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>{{student.address}}</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Requests</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>Action</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>hi</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>
+                                            <button class="btn btn-dark">Accepted</button>
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>hi</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>
+
+                                            <button class="btn btn-danger">Pending</button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- <div class="card-footer">
+            <div class="view_profile">
+                View profile
+            </div>
+            <div class="message">
+                Message
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<!-- 
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4 p-4">
+                <img src="{{student.imagePath}}" alt="..." class="img-fluid" />
+            </div>
+            <div class="col-md-8">
+                <div class="card-body ">
+                    <h4 class="card-title bg-dark text-white p-4">
+                        {{student.firstName|uppercase}}&nbsp;{{student.lastName|uppercase}}</h4>
+                    <p class="card-text">
+                    <div class="row con">
+                        <label class="col-4"> Email:</label>
+                        <div class="col text-left"> {{student.email}}</div>
+                    </div>
+
+                    <div class="row con">
+                        <label class="col-4"> Phone No.:</label>
+                        <div class="col text-left"> {{student.phoneNumber}}</div>
+                    </div>
+
+
+
+                    <div class="row con">
+                        <label class="col-4"> Class:</label>
+                        <div class="col"> {{student.userClass}}</div>
+
+                    </div>
+                    <div class="row con">
+                        <label class="col-4"> Date of Birth:</label>
+                        <div class="col"> {{student.dateOfBirth}}</div>
+                    </div>
+
+                    <div class="row con">
+                        <label class="col-4"> Verified:</label>
+                        <div class="col"> {{student.verified}}</div>
+                    </div>
+
+                    <div class="row con">
+                        <label class="col-4"> Address:</label>
+                        <div class="col"> {{student.address}}</div>
+                    </div>
+
+                    <div class="row con">
+                        <label class="col-4"> City:</label>
+                        <div class="col"> {{student.city}}</div>
+                    </div>
+
+                    <div class="row con">
+                        <label class="col-4"> State:</label>
+                        <div class="col"> {{student.state}}</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="">
+
+</div> -->

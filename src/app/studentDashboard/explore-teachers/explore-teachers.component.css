@@ -1,0 +1,60 @@
+
+.sm {
+    width: 100px;
+    height: 120px;
+    align-self: center;
+}
+
+.card {
+    margin-top: 10px;
+}
+
+.border-danger {
+    border-width: 5px;
+}
+
+.det {
+    padding-left: 50px;
+}
+
+.col-8 {
+    padding-left: 30px;
+}
+
+.col-sm-12 {
+    font-size: small;
+}
+
+.scription {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.cont {
+    align-items: center;
+    align-self: center;
+    align-content: center;
+}
+
+.dropdown-dark {
+    height: fit-content;
+    width: fit-content;
+}
+
+@media(max-width:420px) {
+    .close .text-smaller {
+        font-size: 2px;
+    }
+    .scription {
+        font-size: 12px;
+    }
+}
+
+.alert {
+    display: none;
+}
+
+.text-smaller {
+    font-size: 13px;
+    color: red;
+}

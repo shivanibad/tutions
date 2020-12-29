@@ -1,0 +1,22 @@
+.cn{
+    margin-top: 10px;
+}
+
+@media(max-width:420px){
+   
+    .subs{
+        padding-top: 10px;
+        font-size: 18px;
+    }
+    .btn-sm{
+        width: 40px;
+        height: 30px;
+        font-size: 12px;
+        text-align: center;
+        padding: 0px;
+    }
+ }
+
+ td,tr{
+     text-align: center;
+ }

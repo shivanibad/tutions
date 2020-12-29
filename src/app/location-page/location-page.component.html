@@ -1,0 +1,42 @@
+<!-- <div class="container p-3">
+    <div class="card">
+        <div id="map"></div>
+    </div>
+</div> -->
+
+<div class="">
+    <div id="map"></div>
+</div>
+<div class="bg-white">
+    <div class="p-3">
+        <h2>Enter Address</h2>
+        <form id="locationForm" class="add-form" [formGroup]="locationForm">
+            <div class="row">
+                <div class="col form-group py-2">
+                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0 rounded-0" formControlName="address" placeholder="Address Line 1">
+                    <div *ngIf="isValidInput('address')" class="alert alert-danger">
+                        Address Line 1 is required</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-group py-2">
+                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0 rounded-0" formControlName="city" placeholder="City">
+                    <div *ngIf="isValidInput('city')" class="alert alert-danger">
+                        City is required</div>
+                </div>
+                <div class="col form-group py-2">
+                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0 rounded-0" formControlName="state" placeholder="State">
+                    <div *ngIf="isValidInput('state')" class="alert alert-danger">
+                        State is required</div>
+                </div>
+            </div>
+            <div class="row py-1 px-4">
+                <button type="button" class="col btn btn-danger" (click)="nextPage()" [disabled]="locationForm.invalid">Next Page</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- <button class="btn btn-success" (click)="LoadMap()">Load</button> -->

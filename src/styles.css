@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.crow,body{
+    background: linear-gradient(135deg,#d41e31,#343a40);  
+}
+
+/* html, body { height: 100%; } */
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.vertical-align{
+    vertical-align: middle;
+  }

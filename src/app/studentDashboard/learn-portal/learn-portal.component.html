@@ -1,0 +1,87 @@
+
+<div class="container-fluid bg-transparent">
+<hr/>
+    <div class="card bg-transparent shadow-lg">
+        <img src="../../../assets/ek.jpeg" class="sm">
+        <div class="text-center"><strong>Teacher Name</strong></div>
+        <div class="text-center"><strong>Email Id</strong></div>
+    </div>
+    <div class="row crow">
+
+<div class='col-12'>
+
+            <select class="dropdown-dark selOpt py-2 shadow-sm d-block text-center" ng-model="selectedClass">
+                <option *ngFor="let c of clas" class="opt" value="{{c.n}}">Grade {{c.n}}</option>
+            </select>
+            <div class="card">
+                <div class="row selCat">
+                    <select class="dropdown-light selOpt py-2 shadow-sm" ng-model="selectedCat">
+                        <option *ngFor="let c of clas" value="{{c.cat}}">{{c.cat}}</option>
+                    </select>
+                </div>
+                <div class="row sel" *ngFor="let c of clas">
+                    <div class="button btn btn-dark" target="_blank"><a class="text-white"
+                            href="{{c.vLink}}">{{c.vName}}</a></div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="col" *ngFor="let c of clas">
+                <div class="button btn btn-block bun text-white">
+                    Grade {{c.n}}
+                </div>
+
+                <div class="card">
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="col bg-danger text-white p-2">
+                                Videos
+                            </div>
+                            <div class="col">
+                                <div class="button btn btn-dark" target="_blank"><a class="text-white"
+                                        href="{{c.vLink}}">{{c.vName}}</a></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="col bg-danger text-white p-2">
+                                Notes
+                            </div>
+                            <div class="col">
+                                <div class="button btn btn-dark" target="_blank"><a class="text-white"
+                                        href="{{c.vLink}}">{{c.vName}}</a></div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+
+                            <div class="col bg-danger text-white p-2">
+                                Papers
+                            </div>
+                            <div class="col">
+                                <div class="button btn btn-dark" target="_blank"><a class="text-white"
+                                        href="{{c.vLink}}">{{c.vName}}</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+

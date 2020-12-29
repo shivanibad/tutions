@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="ml-2">
+        <img src="../../assets/TD logo.jpg" style="width:40px;">
+        <a class="navbar-brand">
+            <div class="text-white px-3"> Tution dekho</div>
+        </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mr-auto"></ul>
+        <ul class="navbar-nav">
+            <!-- this link opens admin's dashboard -->            
+            <li class="nav-item active list-inline-item">
+                <a class="nav-link text-center text-md-left" routerLink="/home">Home</a>
+            </li>
+            <li class="nav-item active list-inline-item"
+                *ngIf="this.userService.isLoggedIn && this.userService.isStudent">
+                <a class="nav-link text-center text-md-left" routerLink="/student">Subscriptions</a>
+            </li>
+            <li class="nav-item active list-inline-item"
+                *ngIf="this.userService.isLoggedIn && this.userService.isTeacher || this.userService.isAdmin">
+                <a class="nav-link text-center text-md-left" routerLink="/manage-requests">Requests</a>
+            </li>     
+            <li class="nav-item active list-inline-item"
+                *ngIf="this.userService.isLoggedIn && this.userService.isTeacher">
+                <a class="nav-link text-center text-md-left" routerLink="/tuitionPortal">
+                    Students</a>
+            </li>
+            <li class="nav-item active list-inline-item"
+                *ngIf="this.userService.isLoggedIn && this.userService.isTeacher">
+                <a class="nav-link text-center text-md-left" routerLink="/uploaded">
+                    Uploads</a>
+            </li>
+            <!-- <li class="nav-item active list-inline-item"
+                *ngIf="this.userService.isLoggedIn && this.userService.isAdmin">
+                <a class="nav-link text-center text-md-left" routerLink="/superUser">Dashboard</a>
+            </li> -->
+                   
+            <li class="nav-item active list-inline-item">
+                <a class="nav-link text-center text-md-left" routerLink="/exploreTeachers">Explore Tuitions</a>
+            </li>
+            <!-- this shows who's loggen in -->
+            <li class="nav-item active" *ngIf="this.userService.isLoggedIn">
+                <a class="nav-link text-center text-md-left" routerLink="/studentDetails"> <i class="material-icons vertical-align">
+                        person
+                    </i> {{this.userService.user.firstName + " " + this.userService.user.lastName}}</a>
+            </li>
+            <li class="nav-item active text-white d-flex justify-content-center" *ngIf="!this.userService.isLoggedIn">
+                <!-- <a mat-button (click)="openDialog()" class="bg-dark m-1"
+                    >Login</a> -->
+                <a class="nav-link text-center text-md-left" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item active text-white d-flex justify-content-center" *ngIf="this.userService.isLoggedIn">
+                <!-- <a mat-button (click)="logout()" class="bg-dark m-1"
+                    >Logout</a> -->
+                    <a class="nav-link text-center text-md-left" (click)="logout()">Logout</a>
+            </li>
+            <li class="nav-item active" *ngIf="!this.userService.isLoggedIn">
+                <a class="nav-link text-center text-md-left " routerLink="/location">Register</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>

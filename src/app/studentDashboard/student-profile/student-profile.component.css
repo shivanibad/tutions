@@ -1,0 +1,61 @@
+.container{
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    margin-top:80px;
+    
+}
+
+.card{
+    margin-top:5px;
+    margin-right:20px;
+      margin-left:20px;
+      margin-right: 20px;
+      border-radius: 0.5rem;
+      box-shadow:2px 2px 2px 2px  grey;
+  }
+
+.c{
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    box-shadow:none;
+    margin-bottom: 170px;
+  
+    
+}
+
+  .card-title{
+      padding-left:20px;
+      font-weight: bolder;
+  }
+ 
+  .im{
+width: 160px;
+box-shadow:2px 2px 2px 2px  black;
+  }
+ 
+
+
+
+.crad{
+    background: -webkit-linear-gradient(left, rgb(173, 0, 0), black);
+    min-height: 180px;
+}
+
+
+
+.w3-circle{
+  box-shadow: 2px 2px black;
+}
+
+.w3-panel .pan1 {
+ text-align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+.table{
+  padding: 130px;
+}

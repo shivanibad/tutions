@@ -1,0 +1,52 @@
+.profile-img{
+    align-content: center;
+    align-items: center;
+ }
+ 
+ .sm{
+    width:150px;
+    height: 170px;
+ }
+ 
+ .con{
+    padding-left: 30px;
+ }
+ 
+ label{
+    font-weight: bold;
+   color: #343a40;
+ }
+ 
+ 
+ .im-card{
+    box-shadow: 4px 4px 1px #d41e31;
+ }
+ 
+ .hr{
+    height: 10px;
+    color: #d41e31;
+    background-color: #343a40;
+ }
+ .colpad{
+    padding-left: 0px;
+    padding-right: 0px;
+ 
+ }
+ 
+ .container{
+    margin-bottom: 20px;
+ }
+ 
+ @media(max-width:420px){
+   
+   .sm{
+      width:90px;
+      height: 100px;
+   }
+   .con{
+      padding-left: 10px;
+   }
+   .im-card{
+      font-size: 10px;
+   }
+}

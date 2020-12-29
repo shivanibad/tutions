@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div class="card">
+        <header>
+            <img src="https://cdn.pixabay.com/photo/2016/02/26/11/18/school-1223873_960_720.jpg" />
+            <div class="text-wrap m-2">
+                <h3>{{tution.tutionName | uppercase}}</h3>
+            </div>
+        </header>
+        <main>
+            <a class="cta-wrap">
+                <img src="{{tution.teacher.imagePath}}" class="card-img-top" style="width: 12rem;">
+            </a>
+            <div class="info-wrap">
+                Tutor:
+                {{tution.teacher.firstName + " " + tution.teacher.lastName | uppercase}}
+                <p>Your Class: {{this.userService.user.userClass}}</p>
+            </div>
+        </main>
+    </div>
+    <div class="container-fluid py-3 bg-white">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3> Notes </h3>
+                <ul class="list-group" *ngIf="!isNotesListEmpty">
+                    <li class="list-group-item" *ngFor="let note of notesList">
+                        <div class="row">
+                            <div class="col-4 col-md-2">
+                                <img class="card-img-top mx-auto p-2 d-flex align-items-center" style="width: 5rem;"
+                                    src="../../../assets/images/notebook.svg" alt="Card image cap">
+                            </div>
+                            <div class="col-5 col-md-8 d-flex align-items-center">
+                                {{note.notesName}}
+                            </div>
+                            <div class="col-3 col-md-2 d-flex align-items-center">
+                                <a href="{{note.notePdfLink}}" target="_blank" class="btn btn-dark"> View</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="card" *ngIf="isNotesListEmpty">
+                    <div class="p-5">
+                        This Tution hasn't added any Notes yet.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3> Videos </h3>
+                <ul class="list-group" *ngIf="!isVideoListEmpty">
+                    <li class="list-group-item" *ngFor="let video of videosList">
+                        <div class="row">
+                            <div class="col-4 col-md-2">
+                                <img class="card-img-top mx-auto p-2 d-flex align-items-center" style="width: 5rem;"
+                                    src="../../../assets/images/youtube.svg" alt="Card image cap">
+                            </div>
+                            <div class="col-5 col-md-8 d-flex align-items-center">
+                                {{video.videoName}}
+                            </div>
+                            <div class="col-3 col-md-2 d-flex align-items-center">
+                                <a href="{{video.videoLink}}" target="_blank" class="btn btn-dark"> View</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="card" *ngIf="isVideoListEmpty">
+                    <div class="p-5">
+                        This Tution hasn't added any Videos yet.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

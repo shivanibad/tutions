@@ -1,0 +1,20 @@
+.ecimage{
+   width: 200px;
+}
+.material-icons{
+    font-size: 30px;
+}
+
+div{
+    font-size: large;
+    font-weight: normal;
+}
+
+.container{
+    background-color: linear-gradient(135deg,#d41e31,#343a40); 
+ 
+}
+
+.container-fluid{
+    padding-bottom: 30px;
+}

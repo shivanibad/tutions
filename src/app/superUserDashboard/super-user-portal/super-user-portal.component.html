@@ -1,0 +1,121 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <div class="row  crow">
+    <div class="col m-2">
+        <div class="card bg-transparent shadow-lg">
+            <span class="material-icons m">
+                miscellaneous_services
+                </span>
+            <a class="stretched-link text-uppercase text-white" routerLink="/proposals">Tuition Proposals</a>
+
+        </div>
+    </div>
+    <div class="col m-2">
+        <div class="card bg-transparent shadow-lg">
+            <span class="material-icons m">
+                person_pin
+                </span>
+            <a class="stretched-link text-uppercase text-white" routerLink="/regStudents">Student Registrations</a>
+
+        </div>
+    </div>
+
+</div> -->
+<div class="container">
+    <div class="row">
+        <hr/>
+        <div class="col-md-6 col-sm-6 col-12">
+            <div class="serv-section-2">
+                <div class="serv-section-2-icon"> <i class="fas fa-gem"></i> </div>
+                <div class="serv-section-desc">
+                    <div class="section-no font-weight-bold text-uppercase">Proposals</div>
+                    <h5 class="h5">Tuition Proposals</h5>
+                </div>
+                <div class="text-left text-big font-weight-bold section-no">{{this.nonVerifiedTeacherCount}}</div>
+                <div class="section-heading-line-left"></div>
+                <a class="stretched-link" routerLink="/proposals"></a>
+
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-12">
+            <div class="serv-section-2">
+                <div class="serv-section-2-icon"> <i class="fas fa-gem"></i> </div>
+                <div class="serv-section-desc">
+                    <div class="section-no font-weight-bold text-uppercase">Tuitions</div>
+                    <h5 class="h5">Verified Tuition Registrations</h5>
+                </div>
+                <div class="text-left text-big font-weight-bold section-no">{{this.verifiedTeacherCount}}</div>
+                <div class="section-heading-line-left"></div>
+                <a class="stretched-link" routerLink="/proposals"></a>
+
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-6 col-12">
+            <div class="serv-section-2">
+                <div class="serv-section-2-icon"> <i class="fas fa-cogs"></i> </div>
+                <div class="serv-section-desc">
+                    <div class="section-no font-weight-bold text-uppercase">Students</div>
+                    <h5 class="h5">Student Registrations</h5>
+                </div>
+                <div class="text-left font-weight-bold section-no">{{this.studentCount}}</div>
+                <div class="section-heading-line-left"></div>
+                <a class="stretched-link" routerLink="/regStudents"></a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-12">
+            <div class="serv-section-2">
+                <div class="serv-section-2-icon"> <i class="fas fa-cogs"></i> </div>
+                <div class="serv-section-desc">
+                    <div class="section-no font-weight-bold text-uppercase">Notes</div>
+                    <h5 class="h5">Note Uploads</h5>
+                </div>
+                <div class="text-left font-weight-bold section-no">{{this.studentCount}}</div>
+                <div class="section-heading-line-left"></div>
+                <a class="stretched-link" routerLink="/regStudents"></a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-12">
+            <div class="serv-section-2">
+                <div class="serv-section-2-icon"> <i class="fas fa-cogs"></i> </div>
+                <div class="serv-section-desc">
+                    <div class="section-no font-weight-bold text-uppercase">Books</div>
+                    <h5 class="h5">Book Uploads</h5>
+                </div>
+                <div class="text-left font-weight-bold section-no">{{this.studentCount}}</div>
+                <div class="section-heading-line-left"></div>
+                <a class="stretched-link" routerLink="/regStudents"></a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-12">
+            <div class="serv-section-2">
+                <div class="serv-section-2-icon"> <i class="fas fa-cogs"></i> </div>
+                <div class="serv-section-desc">
+                    <div class="section-no font-weight-bold text-uppercase">Papers</div>
+                    <h5 class="h5">Paper Uploads</h5>
+                </div>
+                <div class="text-left font-weight-bold section-no">{{this.studentCount}}</div>
+                <div class="section-heading-line-left"></div>
+                <a class="stretched-link" routerLink="/regStudents"></a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-12">
+            <div class="serv-section-2">
+                <div class="serv-section-2-icon"> <i class="fas fa-cogs"></i> </div>
+                <div class="serv-section-desc">
+                    <div class="section-no font-weight-bold text-uppercase">Videos</div>
+                    <h5 class="h5">Videos added</h5>
+                </div>
+                <div class="text-left font-weight-bold section-no">{{this.studentCount}}</div>
+                <div class="section-heading-line-left"></div>
+                <a class="stretched-link" routerLink="/regStudents"></a>
+            </div>
+        </div>
+    </div>
+</div>

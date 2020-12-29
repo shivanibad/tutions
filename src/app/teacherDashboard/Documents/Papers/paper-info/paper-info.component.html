@@ -1,0 +1,14 @@
+<td>{{paper.paperId}}</td>
+<td> <a href="{{paper.paperPdfLink}}" target="blank">{{paper.paperName}} </a></td>
+<td>{{paper.paperClass}}</td>
+<td>{{paper.subject}}</td>
+
+<td>
+  <button type="button" class="btn btn-dark btn-sm" routerLink="/editPapers"
+    [queryParams]="{no: paper.paperId}">
+    <span class="glyphicon glyphicon-ok"></span> Edit
+  </button>
+  <button type="button" class="btn btn-danger btn-sm" (click)="onDelete()">
+    Delete
+  </button>
+</td>

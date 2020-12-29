@@ -1,0 +1,77 @@
+<div class="container-fluid m-1">
+    <div class="jumbotron bg-white text-dark rounded-0 mb-0">
+        <div class="card shadow-sm">
+            <h1 class="text-center"> Tution Details</h1>
+        </div>
+        <h2 class="my-3"> {{tution.tutionName | uppercase}}</h2>
+        <div class="row px-3">
+            <div class="row">
+                <div class="col-12">
+                    Teacher: {{teacher.firstName + teacher.lastName | uppercase}}
+                </div>
+                <div class="col-12">
+                    Location: 13th street, behind glassgow apartments, delhi chock
+                </div>
+                <div class="col-6">
+                    City: New Delhi
+                </div>
+                <div class="col-6">
+                    State/UT: Delhi
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron bg-white text-dark mt-0 rounded-0">
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="isUpdated">
+            <strong>Updated! </strong> You have approved the Teacher and Tution.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeIsUpdatedAlert()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="isRejected">
+            <strong>Updated! </strong> You have Rejected the Teacher and Tution.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeIsUpdatedAlert()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="alert alert-info alert-dismissible fade show" role="alert" *ngIf="isFailed">
+            <strong>Failed! </strong> Failed to perform Operation, Please try again.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeIsUpdatedAlert()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card shadow-sm">
+            <h1 class="text-center"> Teacher Details</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <h4 class="my-3">Name: {{teacher.firstName + " " + teacher.lastName | uppercase}}</h4>
+                </div>
+                <h6>Email: {{teacher.email}}</h6>
+                <h6>Contact: {{teacher.phoneNumber}}</h6>
+                <h6>Class: {{teacher.userClass}}</h6>
+            </div>
+            <div class="col-md-6 d-flex justify-content-end">
+                <div class="card border-0" style="width: 25rem;">
+                    <img class="card-img-top" src="{{teacher.imagePath}}" alt="Card image cap">
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pt-3 row ">
+            <div class="col-sm-4 col-md-3">
+                <button class="btn btn-dark pl-4 pr-4 col" (click)="onAccept()">Accept</button>
+            </div>
+            <div class="col-sm-4 col-md-3">
+                <button class="btn btn-danger pl-4 pr-4 col" (click)="onReject()">Reject</button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="m-0">
+
+    <div id="mapid"></div>
+
+    <!-- medium and large devices-->
+    <div class="card p-3 mt-0 rounded-0 d-none d-block-md">
+        <div class="row pr-1">
+            <div class="col-10">
+                <h3>{{this.mapTutionName}}</h3>
+            </div>
+
+            <button class="btn btn-danger col-2" routerLink="/tution-enroll" [queryParams]="{no: this.mapTutionId}">
+                View Details
+            </button>
+        </div>
+        <div class="row mt-2 pr-1">
+
+            <div class="col-10">
+                <div>
+                    Location: {{this.address}}
+                </div>
+                <div class="row">
+                    <div class="col">
+                        City: {{this.city}}
+                    </div>
+                    <div class="col">
+                        State/UT: {{this.stateOrUT}}
+                    </div>
+                </div>
+            </div>
+            <button class="btn  btn-dark col-2" routerLink="/exploreTeachers">
+                Back to List View
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- small devices-->
+    <div class="card p-3 mt-0 rounded-0 d-block d-none-md">
+
+        
+
+        <div class="row mt-2 mx-1">
+            <div class="col-12">
+                <h3>{{this.mapTutionName}}</h3>
+            </div>
+            <div class="col-12">
+                Location: {{this.address}}
+            </div>
+            <div class="col-12">
+                City: {{this.city}}
+            </div>
+            <div class="col-12">
+                State/UT: {{this.stateOrUT}}
+            </div>
+        </div>
+
+        <div class="row mt-2 mx-1">
+            <button class="btn btn-danger col mx-1" routerLink="/tution-enroll" [queryParams]="{no: this.mapTutionId}">
+                View Details
+            </button>
+
+            <button class="btn  btn-dark col mx-1" routerLink="/exploreTeachers">
+                Back to List View
+            </button>
+        </div>
+
+    </div>
+
+
+</div>

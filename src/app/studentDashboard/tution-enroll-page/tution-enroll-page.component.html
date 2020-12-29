@@ -1,0 +1,31 @@
+<div id="container-fluid">
+    <div class="info px-4">
+        <h1>{{tution.tutionName}}</h1>
+        <h2>{{this.count}} students currently enrolled.</h2>
+        <p id="pricing"> Teacher: {{tution.teacher.firstName + " " + tution.teacher.lastName | uppercase}}</p>
+        <p>
+            Location: {{tution.teacher.address}}
+        </p>
+        <p>
+            City: {{tution.teacher.city}}
+        </p>
+        <p>
+            State/UT: {{tution.teacher.state}}
+        </p>
+        <div class="pt-3">
+            <button *ngIf="!enrolled && !isFailed" class="btn btn-success pl-4 pr-4" (click)="onEnrollAlert()">
+                Enroll
+            </button>
+            <button *ngIf="enrolled && !isFailed" class="btn btn-success pl-4 pr-4">Requested</button>
+            <button *ngIf="isFailed" class="btn btn-success pl-4 pr-4">You are already enrolled</button>
+        </div>
+    </div>
+    <div id="img-wrap">
+        <ul class="images">
+            <li class="big-img">
+               
+                <img src="{{tution.teacher.imagePath}}">
+            </li>
+        </ul>
+    </div>
+</div>

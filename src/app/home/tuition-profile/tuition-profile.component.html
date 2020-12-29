@@ -1,0 +1,84 @@
+<owl-carousel-o [options]="customOptions" (dragging)="isDragging = $event.dragging">
+    <ng-container *ngFor="let tuition of tuitions">
+        <ng-template carouselSlide>
+            <div class="slider text-center">
+
+                <div class="u_card"></div>
+                <div class="user_card">
+                    <div class="d-flex justify-content-center">
+                        <div class="brand_logo_container">
+                            <img src="{{tuition.image}}" class="brand_logo" alt="Logo">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center form_container">
+                        <div class="text-center">
+                            <div class="tuitionName">{{tuition.name| uppercase}}</div>
+                            <div> Subject: {{tuition.details.subject}}</div>
+                            <div> Address: {{tuition.details.location}}</div>
+                            <div>Experience: {{tuition.details.experience}}</div>
+                            <div>Rating: {{tuition.details.rating}}</div>
+                            <button class="btn btn-danger btn-sm">Subscribe</button>
+                            <a routerLink="/tuitionProfile" class="btn btn-dark btn-sm text-white stretched-link"
+                                data-toggle="modal" data-target=".bd-example-modal-lg">See Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </ng-container>
+</owl-carousel-o>
+
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-transparent border-0">
+            <div class="container bg-transparent h-100 text-white text-center" *ngFor="let tuition of tuitions">
+                <div class="d-flex justify-content-center h-100">
+
+                    <div class="us_card">
+                        <div class="card c border-0 bg-transparent text-center">
+                            <img src="{{tuition.thumbnail}}" class="smallest img-fluid">
+
+                            <a href="{{tuition.sampleVideo}}" target="_blank" class="stretched-link"><button
+                                    class="btn btn-sm btn-danger">Demo
+                                    Video</button></a>
+                        </div>
+                        <div class="tuitionName">{{tuition.name| uppercase}}</div>
+                        <div> Subject: {{tuition.details.subject}}</div>
+                        <div> Address: {{tuition.details.location}}</div>
+                        <div>Experience: {{tuition.details.experience}}</div>
+                        <div>Rating: {{tuition.details.rating}}</div>
+                    </div>
+                    <div class="use_card">
+                        <div class="d-flex justify-content-center">
+                            <div class="brand_log_container">
+                                <img src="{{tuition.image}}" class="brand_log" alt="Logo">
+                                <div class="tuitionName text-dark py-2">
+                                    {{tuition.name| uppercase}}</div>
+                                <button class="btn btn-danger btn-sm">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
+<div class="container">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="img" src="../../../assets/web.jpg">
+            </div>
+            <div class="carousel-item " *ngFor="let im of images">
+                <img class="img" src="{{im.image}}">
+            </div>
+        </div>
+    </div>
+    </div>
+ -->

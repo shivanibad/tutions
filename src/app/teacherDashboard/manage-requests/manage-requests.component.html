@@ -1,0 +1,49 @@
+<div class="conatainer" *ngIf="this.teacherService.isAdmin">
+    <div class="card bg-danger shadow-md text-center text-white p-2">
+        <h2 class="subs">Non Verified Teachers</h2>
+    </div>
+    <div style="overflow-x:auto;">
+        <table class="table">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <td scope="col">Teacher ID</td>
+                    <td scope="col">Name</td>
+                    <td scope="col">Class</td>
+                    <td scope="col">Email</td>
+                    <td scope="col">Operation</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white" app-non-verified *ngFor="let teacher of teachers" [teacher]='teacher' (viewEvent)='viewEvent($event)'>
+                    <!-- <app-non-verified [teacher]='teacher' (viewEvent)='viewEvent($event)'></app-non-verified> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="conatainer" *ngIf="this.teacherService.isTeacher">
+    <div class="card bg-danger shadow-md text-center text-white p-2">
+        <h2 class="subs">Enrollment Request</h2>
+    </div>
+    <div style="overflow-x:auto;">
+        <table class="table">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <td scope="col">Student Name</td>
+                    <td scope="col">Class</td>
+                    <td scope="col">Email</td>
+                    <td scope="col">Phone Number</td>
+                    <td scope="col">Operation</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white" app-enrollment-request-table-row *ngFor="let student of requestedStudents" [student]='student' (update)='updateRequets($event)'>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

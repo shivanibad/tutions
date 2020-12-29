@@ -1,0 +1,184 @@
+
+
+.nav-style-effect {
+  transition: 0.3s ease-in;
+  
+}
+
+.nav-style-effect.scrolled {
+  background: rgb(32, 32, 32) !important;
+}
+
+.nav-style-effect-for-about-page {
+  background: rgb(32, 32, 32) !important;
+}
+
+.vertical-align{
+  vertical-align: middle;
+}
+
+.navbar-brand-img{
+  width: 50px;
+}
+
+.link-hover-effect {
+  color: rgb(7, 7, 7);
+}
+
+.link-hover-effect:hover {
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+}
+
+
+
+
+
+
+.sml{
+  width: 70px;
+}
+
+.text-danger{
+  font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.searchbar{
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 45px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 10px;
+  color: #343a40;
+  }
+
+  .search_input{
+  color: #343a40;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 50px;
+  caret-color:transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+  }
+
+  .searchbar:hover > .search_input{
+  padding: 0 10px;
+  width: 150px;
+  caret-color:red;
+  transition: width 0.4s linear;
+  }
+
+  .searchbar:hover > .search_icon{
+  background: white;
+  color: #e74c3c;
+  }
+
+  .search_icon{
+  height: 30px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color:white;
+  text-decoration:none;
+  }
+ */
+.p{
+  padding-left: 10px;
+  padding-top: 7px;
+}
+
+.r{
+  background-color: #343a40;
+}
+
+
+.loc{
+color: white;
+
+}
+
+.clu{
+  align-content: center;
+  align-items: center;
+}
+.b{
+  margin-left: 10px;
+  text-align: center;
+
+}
+
+.container-fluid{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #343a40;
+  color: white;
+}
+
+
+
+
+.input-group{
+
+  width: fit-content;
+  background-color: white;
+}
+
+
+
+@media(max-width:420px){ 
+
+  
+.sml{
+  width: 45px;
+  height: 30px;
+  margin-top: 6px;
+}
+.btn{
+  width: 48px;
+  height: 30px;
+  font-size: 13px;
+  text-align: center;
+  padding: 0;
+}
+.clu{
+  font-size: 14px;
+}
+
+
+.searchbar{
+   height: 43px;
+  padding-top: 5px;
+  }
+
+  .search_input{
+  width: 30px;
+  line-height: 30px;
+  }
+
+  .search_icon{
+    height: 30px;
+    width: 40px;
+  }
+ .searchbar:hover > .search_input{
+      padding: 0 10px;
+      width: 50px;
+}
+}

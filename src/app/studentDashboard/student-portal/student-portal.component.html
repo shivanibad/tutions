@@ -1,0 +1,20 @@
+<hr class="hr" />
+
+<div class="card  p-3 bg-transparent text-white text-center text-uppercase scription shadow-lg border-white">
+    Subscriptions</div>
+<div class="container">
+    <div class=" row" *ngIf="!isTutionListEmpty">
+        <div class="col-lg-12 " *ngFor="let tution of tutions">
+            <app-subscription-info [tution]="tution">
+            </app-subscription-info>
+        </div>
+    </div>
+
+    <div class="card" *ngIf="isTutionListEmpty">
+        <div class="p-5 text-center">
+            You haven't subscribed to any tutions yet, head to the explore tution page.
+        </div>
+    </div>
+</div>
+
+<hr />

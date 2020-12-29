@@ -1,0 +1,114 @@
+<div class="container-fluid text-white rounded-0">
+    <div class=" bg  p-5">
+        <h2> Search Books</h2>
+        <form id="searchForm" class="searchForm" [formGroup]="searchForm">
+            <div class="row">
+                <div class="col-md-11">
+                    <input type="text" class="form-control col-12" formControlName="val"
+                        placeholder="Search for a book">
+                </div>
+                <div class="col-1 d-none d-md-block">
+                    <button class="btn btn-dark ml-auto" (click)="search()">
+                        Search
+                    </button>
+                </div>
+
+                <div class="col-1 d-block d-md-none mt-2 ml-5 pl-5">
+                    <button class="btn btn-dark d-flex justify-content-center mx-auto" (click)="search()">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container-fluid bg-white">
+        <div style="overflow-x:auto;">
+            <table class="table">
+                <thead class="bg-dark text-white">
+                    <tr>
+                        <td scope="col">Book Name</td>
+                        <td scope="col">Publisher</td>
+                        <td scope="col">Subject</td>
+                        <td scope="col">Class</td>
+                        <td scope="col">Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-white"
+                        *ngFor='let book of searchedBooks | slice: ((page-1) * pageSize) : (page * pageSize)'>
+                        <td scope="col">{{book.bookName}}</td>
+                        <td scope="col">{{book.publisher}}</td>
+                        <td scope="col">{{book.subject}}</td>
+                        <td scope="col">{{book.bookClass}}</td>
+                        <td scope="col">
+                            <a href="{{book.bookPdfLink}}" target="_blank" class="btn btn-danger">
+                                View
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <ngb-pagination [collectionSize]="searchedBooks.length" [(page)]="page" [pageSize]="pageSize"
+                aria-label="Default pagination"></ngb-pagination>
+
+
+
+            <!-- <div class="" *ngIf="!isEmpty">
+            <ul class="list-group">
+                <li class="list-group-item my-1" *ngFor="let book of searchedBooks">
+                    <div class="row">
+
+                        <div class="col-4 col-md-2">
+                            <img class="card-img-top mx-auto p-2 d-flex align-items-center" style="width: 8rem;"
+                                src="../../../assets/images/notebook.svg" alt="Card image cap">
+                        </div>
+                        <div class="col-5 col-md-8 d-flex align-items-center">
+                            <div>
+                                <h4>
+                                    {{book.bookName}}
+                                </h4>
+                                <p>
+                                    Subject: {{book.subject}}
+                                </p>
+                                <p>
+                                    Class: {{book.bookClass}}
+                                </p>
+                                <p>
+                                    Publisher: {{book.publisher}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-3 col-md-2 d-flex align-items-center">
+                            <a href="{{book.bookPdfLink}}" target="_blank" class="btn btn-success"> View</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+ -->
+            <div class="" *ngIf="isEmpty">
+                <div class="card p-1 text-center bg-white border-rounded p-5">
+                    <div class="row">
+
+                        <div class="col-4 col-md-2">
+
+                        </div>
+                        <div class="col-5 col-md-8 d-flex align-items-center">
+
+                            <p>
+                                No results found in All Categories, Try something else
+                            </p>
+
+                        </div>
+                        <div class="col-3 col-md-2 d-flex align-items-center">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

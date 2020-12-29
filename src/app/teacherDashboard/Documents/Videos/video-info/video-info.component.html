@@ -1,0 +1,14 @@
+<td>{{video.videoId}}</td>
+<td> <a href="{{video.videoLink}}" target="blank">{{video.videoName}}</a></td>
+<td> description not added yet</td>
+<td>{{video.dateAdded}}</td>
+<td>{{video.videoClass}}</td>
+<td>{{video.subject}}</td>
+<td>
+  <button type="button" class="btn btn-dark btn-sm" routerLink="/editVideos" [queryParams]="{no: video.videoId}">
+    <span class="glyphicon glyphicon-ok"></span> Edit
+  </button>
+  <button type="button" class="btn btn-danger btn-sm" (click)="onDelete()">
+    Delete
+  </button>
+</td>

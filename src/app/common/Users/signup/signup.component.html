@@ -1,0 +1,302 @@
+<!--
+<div class="container">
+    <div class="card">
+        <h5 class="text-white">Hey there, Student! Register Yourself</h5>
+        <hr class="hr" />
+        <a class="text-white text-right" routerLink="/registerTeacher">Want to Register as a Teacher ?</a>
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="isVideoAdded">
+            <strong>Video added successfully</strong>
+            <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="isFailed">
+            <strong>Failed to add Video</strong>
+            <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <form id="signUpForm" class="sign-form" [formGroup]="signUpForm">
+            <div class="sign-in-htm">
+                <div class="">
+                    <div class="card bg-white upload-img text-dark">
+                        <div class="row ">
+                            <img [src]="imgSrc" width="150px" height="170px" class="default-im"
+                                (click)="fileUploader.click()">
+                        </div>
+                        <div class="row ">
+                            <div class="form-group">
+
+                                <label for="profileImage">Upload Image</label>
+                                <div class="d-flex justify-content-center">
+                                    <input formControlName="profileImage" class="form-control form-control-sm text-dark"
+                                        type="file" (change)="selectFile($event); showPreview($event)">
+                                </div>
+                                <div class="d-flex justify-content-center mt-2">
+                                    <button class="btn btn-success" (click)="uploadFile()">
+                                        Upload
+                                    </button>
+                                </div>
+
+                                <div class="text-danger" *ngIf="isValidInput('profileImage')">This
+                                    field is required.
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="fname" class="label">First Name</label>
+                        <input id="fname" type="text" class="form-control" formControlName="fname">
+                        <div *ngIf="isValidInput('fname')" class="text-danger">
+                            First Name is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname" class="label">Last Name</label>
+                        <input id="lname" type="text" class="form-control" formControlName="lname">
+                        <div *ngIf="isValidInput('lname')" class="text-danger">
+                            Last Name is required</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="dob" class="label">Date Of Birth</label>
+                        <input id="dob" type="date" class="form-control" formControlName="dob">
+                        <div *ngIf="isValidInput('dob')" class="text-danger">
+                            Date of Birth is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="label">Ph No</label>
+                        <input id="phone" type="text" class="form-control" formControlName="phone">
+                        <div *ngIf="isValidInput('phone')" class="text-danger">
+                            Phone No. is required</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="class" class="label">Class</label>
+                        <input id="class" type="text" class="form-control" formControlName="class">
+                        <div *ngIf="isValidInput('class')" class="text-danger">
+                            Class is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="school" class="label">School</label>
+                        <input id="school" type="text" class="form-control" formControlName="school">
+                        <div *ngIf="isValidInput('school')" class="text-danger">
+                            Last Name is required</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="email" class="label">Email</label>
+                        <input id="email" type="text" class="form-control" formControlName="email">
+                        <div *ngIf="isValidInput('email')" class="text-danger">
+                            Email is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass" class="label">Password</label>
+                        <input type="text" class="form-control" formControlName="pass">
+                        <div *ngIf="isValidInput('pass')" class="text-danger">
+                            Password is required
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="row">
+                    <div class="form-group col-12 mx-0">
+                        <label for="address" class="label">Address</label>
+                        <input id="address" type="text" class="form-control" formControlName="address">
+                        <div *ngIf="isValidInput('address')" class="text-danger">
+                            Address is required</div>
+                    </div>                    
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="city" class="label">City</label>
+                        <input id="city" type="text" class="form-control" formControlName="city">
+                        <div *ngIf="isValidInput('city')" class="text-danger">
+                            City is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="state" class="label">State</label>
+                        <input type="text" class="form-control" formControlName="state">
+                        <div *ngIf="isValidInput('state')" class="text-danger">
+                            State is required
+                        </div>
+                    </div>
+                </div>
+ --
+                <div class="form-group" *ngIf="isLoading">
+                    <div class="bg-white text-dark text-center p-2">
+                        <img src="../../../../assets/Authenticating.gif" style="width: 50px;"><strong> Authenticating
+                        </strong>
+                    </div>
+                </div>
+
+                <hr class="hr" />
+                <div class="form-group d-flex justify-content-center">
+                    <button type="submit" id="button" class="btn btn-sm btn-dark" (click)="onRegister()"
+                        [disabled]="signUpForm.invalid">Register</button>
+                </div>
+                <hr class="hr" />
+            </div>
+        </form>
+    </div>
+</div> -->
+
+<div class="bg-white">
+    <div class="container p-3">
+        <h3>Student Registration</h3>
+        <a class="text-dark text-right" routerLink="/registerTeacher">Want to Register as a Teacher ?</a>
+
+        <form id="signUpForm" class="" [formGroup]="signUpForm">
+
+            <div class="card">
+                <div class="row d-flex justify-content-center p-3">
+                    <img [src]="imgSrc" width="150px" height="170px" class="default-im" (click)="fileUploader.click()">
+                </div>
+
+                <div class="row d-flex justify-content-center">
+                    <div class="form-group ">
+
+                        <!-- <label for="profileImage">Upload Image</label> -->
+                        <div class="d-flex justify-content-center">
+                            <label class="btn btn-danger">Upload Picture
+                                <input formControlName="profileImage" class="text-dark" type="file"
+                                    (change)="selectFile($event); showPreview($event)" hidden>
+                            </label>
+                        </div>
+                        <!-- <div class="d-flex justify-content-center mt-2">
+                            <button class="btn btn-success" (click)="uploadFile()">
+                                Upload
+                            </button>
+                        </div> -->
+
+                        <div class="text-danger" *ngIf="isValidInput('profileImage')">This
+                            field is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" mt-2 p-2">
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="fname" class="label">First Name</label>
+                        <input id="fname" type="text" class="form-control" formControlName="fname">
+                        <div *ngIf="isValidInput('fname')" class="text-danger">
+                            First Name is required</div>
+                    </div>
+                    <div class="form-group col">
+                        <label for="lname" class="label">Last Name</label>
+                        <input id="lname" type="text" class="form-control" formControlName="lname">
+                        <div *ngIf="isValidInput('lname')" class="text-danger">
+                            Last Name is required</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="dob" class="label">Date Of Birth</label>
+                        <input id="dob" type="date" class="form-control" formControlName="dob">
+                        <div *ngIf="isValidInput('dob')" class="text-danger">
+                            Date of Birth is required</div>
+                    </div>
+                    <div class="form-group col">
+                        <label for="phone" class="label">Ph No</label>
+                        <input id="phone" type="text" class="form-control" formControlName="phone">
+                        <div *ngIf="isValidInput('phone')" class="text-danger">
+                            Phone No. is required</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="class" class="label">Class</label>
+                        <input id="class" type="text" class="form-control" formControlName="class">
+                        <div *ngIf="isValidInput('class')" class="text-danger">
+                            Class is required</div>
+                    </div>
+                    <div class="form-group col">
+                        <label for="school" class="label">School</label>
+                        <input id="school" type="text" class="form-control" formControlName="school">
+                        <div *ngIf="isValidInput('school')" class="text-danger">
+                            School Name is required</div>
+                    </div>
+                </div>
+
+                <div class="card border-0">
+                    <label>Gender</label>
+                    <div class="row ml-1">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Male
+                            </label>
+                        </div>
+                        <div class="form-check mb-1 ml-1">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="email" class="label">Email</label>
+                        <input id="email" type="text" class="form-control" formControlName="email">
+                        <div *ngIf="isValidInput('email')" class="text-danger">
+                            Email is required</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="pass" class="label">Password</label>
+                        <input type="text" class="form-control" formControlName="pass">
+                        <div *ngIf="isValidInput('pass')" class="text-danger">
+                            Password is required
+                        </div>
+                    </div>
+                    <div class="form-group col">
+                        <label for="pass" class="label">Confirm Password</label>
+                        <input type="text" class="form-control" formControlName="pass">
+                        <div *ngIf="isValidInput('pass')" class="text-danger">
+                            Password is required
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group" *ngIf="isLoading">
+                        <div class="bg-white text-dark text-center p-2">
+                            <img src="../../../../assets/Authenticating.gif" style="width: 50px;"><strong>
+                                Authenticating
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group d-flex justify-content-center">
+                    <button type="submit" id="button" class="btn btn-sm btn-danger p-2 px-5" (click)="uploadFileAndRegister()"
+                        [disabled]="signUpForm.invalid"><strong>Register</strong></button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>

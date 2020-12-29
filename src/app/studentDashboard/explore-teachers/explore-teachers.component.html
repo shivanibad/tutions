@@ -1,0 +1,38 @@
+<div class="container bg-white">
+
+    <hr />
+    <div class="card  p-3 bg-transparent text-dark text-center text-uppercase scription shadow-lg border-white">Explore
+        Teachers</div>
+    <div class="d-flex justify-content-center mt-3">
+        <button class="btn  btn-dark" routerLink="/tution-list-map"> Explore on Maps </button>
+    </div>
+    <div class="container">
+
+        <div class="" *ngIf="isPaginationRequired">
+            <div class=" row">
+
+                <div class="col-lg-12 "
+                    *ngFor="let tution of searchedTutions | slice: ((page-1) * pageSize) : (page * pageSize)">
+                    <app-explore-info [tution]="tution"></app-explore-info>
+                </div>
+
+            </div>
+            <div class="py-2">
+                <ngb-pagination [collectionSize]="searchedTutions.length" [(page)]="page" [pageSize]="pageSize"
+                    aria-label="Default pagination"></ngb-pagination>
+            </div>
+        </div>
+
+
+        <div class="" *ngIf="!isPaginationRequired">
+            <div class=" row">
+
+                <div class="col-lg-12 " *ngFor="let tution of searchedTutions">
+                    <app-explore-info [tution]="tution"></app-explore-info>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

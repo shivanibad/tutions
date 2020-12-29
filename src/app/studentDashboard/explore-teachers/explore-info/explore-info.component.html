@@ -1,0 +1,19 @@
+<div class="card d-flex justify-content-center">
+    <div class="card-header bg-danger text-white">{{tuition.tutionName}}</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+                <img src="{{tuition.teacher.imagePath}}" class="sm">
+            </div>
+            <div class="col-8">
+                <div> Teacher: {{tuition.teacher.firstName + " " + tuition.teacher.lastName}}</div>
+                <div> Class: {{tuition.teacher.userClass}}</div>
+                <div>
+                    <button class="btn btn-dark" routerLink="/tution-enroll" [queryParams]="{no: tuition.tutionId}">
+                        View
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

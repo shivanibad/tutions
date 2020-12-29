@@ -1,0 +1,19 @@
+<div class="card d-flex justify-content-center">
+    <div class="card-header bg-danger text-white">{{tution.tutionName}}</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+                <img src="{{tution.teacher.imagePath}}" class="sm">
+            </div>
+            <div class="col-8">
+                <div> Name: {{tution.tutionName}}</div>
+                <div> Teacher: {{tution.teacher.firstName + " " + tution.teacher.lastName}}</div>
+                <div> Class: {{tution.listOfClasses}}</div>
+                <div> Address: Delhi</div>
+                <button class="btn btn-danger btn-sm text text-white"><a routerLink="/classPortal"
+                        [queryParams]="{no: tution.tutionId}" class="text-white
+                        ">Learn</a></button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+/* 
+.container{
+	width: fit-content;
+	padding:20px;
+
+background-size: cover;
+}
+
+.card{
+	padding:40px;
+	background:rgba(0,0,0,0.5);
+}
+
+.sign-form .form-group .form-control,
+.sign-form .form-group .btn{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+	color: white;
+}
+
+.sign-form .form-group .label{
+	color:rgba(255, 255, 255, 0.925);
+	font-size:16px;
+}
+.sign-form .form-group .btn{
+	background:#d41e31;
+}
+
+.text-danger{
+    font-weight: bolder;
+}
+
+
+.sign-form .form-group .btn{
+    text-transform:uppercase;
+	
+
+    display:block;
+    border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	
+}
+
+
+.form-group{
+	margin-left: 20px;
+}
+
+.upload-img{
+	align-items: center;
+	align-self: center;
+	align-content: center;
+	text-align: center;
+	width: fit-content;
+}
+
+.hover-hide{
+	opacity: 1;
+}
+.hover-hide:hover{
+	opacity: 0;
+}
+
+.hr{
+	background-color: white;
+}
+
+.default-im{
+	
+	width: 150px;
+	height: 170px;
+	background-image: "../../../assets/images/avatar.png";
+} */
+
+/* .file-input {
+	display: inline-block;
+	text-align: left;
+	background: rgb(102, 102, 102);
+	padding: 16px;
+	width: 450px;
+	position: relative;
+	border-radius: 3px;
+  } */
+

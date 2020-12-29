@@ -1,0 +1,47 @@
+<div class="container cn">
+    <div class="card bg-danger shadow-md text-center text-white p-2">
+        <h2 class="subs">Enrolled Students</h2>
+    </div>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="isVideoAdded">
+        <strong>Student Removed successfully</strong>
+        <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="isFailed">
+        <strong>Errors in Removing Student</strong>
+        <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div style="overflow-x:auto;" *ngIf="!isEmpty">
+        <table class="table">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <td scope="col">ID</td>
+                    <td scope="col">Name</td>
+                    <td scope="col">Class</td>
+                    <td scope="col">School</td>
+                    <td scope="col">Board</td>
+                    <td scope="col">Operation</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white" app-student-info *ngFor="let student of listOfEnrolledStudents" [student]='student'
+                    (deleteEvent)='deleteUser($event)'>
+                    <!-- <app-student-info [student]='student' (deleteEvent)='deleteUser($event)'></app-student-info> -->
+                </tr>
+
+            </tbody>
+        </table>        
+    </div>
+
+    <div class="card" *ngIf="isEmpty">
+        <div class="p-5 text-center">
+            Students haven't subscribed to your tution yet.
+        </div>
+    </div>
+</div>

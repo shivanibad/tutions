@@ -1,0 +1,87 @@
+<div class="hero-image">
+	<img class="img-fluid" src="../../../assets/pink copy.jpg">
+</div>
+
+<!-------------------------------Popular Subjects ---------------------------------->
+<hr />
+<div class="container-fluid bg-white">
+	<div class="row  rowSubject">
+
+		<div class="col-8 topPad text-left sub">POPULAR SUBJECTS</div>
+		<div class="col-4 topPad text-right"><button routerLink="/books" class="bg-dark text-white">See All</button>
+		</div>
+	</div>
+	<hr />
+	<div class="bg-white" (click)="navigateToBooks()">
+
+		<owl-carousel-o [options]="customOptions" (dragging)="isDragging = $event.dragging">
+			<ng-container *ngFor="let im of image">
+				<ng-template carouselSlide>
+					<div class="slider text-center">
+						<img class="img-fluid i" src="{{im.link}}">
+						<h6> {{im.caption}}</h6>
+					</div>
+				</ng-template>
+			</ng-container>
+		</owl-carousel-o>
+		<hr />
+	</div>
+</div>
+
+
+
+<!-------------------------------------------------Banners----------------------------------------------------->
+<hr />
+<div class="bg">
+	<hr />
+	<div class="sub text-center ">BEST RESULTS</div>
+	<owl-carousel-o [options]="customOp" (dragging)="isDragging = $event.dragging">
+		<ng-container *ngFor="let back of background">
+			<ng-template carouselSlide>
+				<div class="slider text-center">
+					<img class="img-fluid i" src="{{back.bg}}">
+				</div>
+			</ng-template>
+		</ng-container>
+	</owl-carousel-o>
+	<hr />
+</div>
+
+
+<section id="team" class="pb-5">
+	<div class="container-fluid">
+		<div class="sub text-center">Top Teachers</div>
+		<div class="row">
+
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" *ngFor="let t of tuionList | slice:0:4">
+				<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+					<div class="mainflip">
+
+						<div class="frontside">
+							<div class="card m-2">
+								<div class="card-body text-center">
+									<p><img class=" img-fluid" src="{{t.teacher.imagePath}}" alt="card image"></p>
+									<h4 class="card-title">{{t.teacher.firstName + " " + t.teacher.lastName}}</h4>
+									<p class="card-text">{{t.teacher.address}}</p>
+									<p class="card-text">{{t.teacher.city}}</p>
+									<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="backside">
+							<div class="card ">
+								<div class="card-body text-center mt-4">
+									<h4 class="card-title">{{t.teacher.firstName + " " + t.teacher.lastName}}</h4>
+									<p class="card-text">{{t.teacher.city}}</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
